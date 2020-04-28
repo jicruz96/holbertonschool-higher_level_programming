@@ -53,3 +53,6 @@ dkms.conf
 
 # Template directories and files
 *template*
+
+# Whatever the hell __pycache__ is
+__pycache__
