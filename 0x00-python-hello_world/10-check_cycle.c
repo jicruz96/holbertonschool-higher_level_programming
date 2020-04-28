@@ -7,13 +7,18 @@
  **/
 int check_cycle(listint_t *list)
 {
-	listint_t *p1, *p2;
+	listint_t *p1;
 
 	if (list)
-		for (p2 = list->next; p2; p2 = p2->next)
-			for (p1 = list; p1 != p2 || p2 == list; p1 = p1->next)
-				if (p1->next == p2->next)
-					return (1);
+		for (p1 = list->next; p1; list = list->next, p1 = p1->next)
+		{
+			if (list->next == p1->next)
+				return (1);
+			
+			p1 = p1->next;
+			if (!p1)
+				break;
+		}
 
 	return (0);
 }
