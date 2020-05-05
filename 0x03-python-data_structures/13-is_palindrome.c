@@ -7,46 +7,24 @@
  **/
 int is_palindrome(listint_t **head)
 {
-	listint_t *tail = NULL, *tmp = *head;
+	listint_t *tail = NULL, *tmp = *head, *prev;
 	int result = 1;
 
 	while (result && tmp && tmp != tail)
 	{
-		prev_node(&tail, tmp);
+		for (prev = tmp; prev->next != tail;)
+			prev = prev->next;
+
+		tail = prev;
+
 		if (tmp->n != tail->n)
 			result = 0;
-		next_node(&tmp, tail);
+
+		if (tmp == tail || tmp->next == tail)
+			tmp = NULL;
+		else
+			tmp = tmp->next;
 	}
 	free_listint(tmp);
 	return (result);
-}
-/**
- * next_node - checks if a number is a palindrome
- * @current: current node. to be set to next node.
- * @tail: end of list. not necessarily NULL.
- * Return: void
- **/
-
-void next_node(listint_t **current, listint_t *tail)
-{
-	if (*current == tail || (*current)->next == tail)
-		*current = NULL;
-	else
-		*current = (*current)->next;
-}
-
-/**
- * prev_node - retrieves the previous node of a list
- * @current: current node. to be set to previous node.
- * @head: starting position in linked list
- * Return: void
- **/
-void prev_node(listint_t **current, listint_t *head)
-{
-	listint_t *previous = head;
-
-	while (previous && previous->next != *current)
-		previous = previous->next;
-
-	*current = previous;
 }
