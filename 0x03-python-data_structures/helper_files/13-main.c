@@ -22,14 +22,12 @@ int main(void)
     add_nodeint_end(&head, 972);
     add_nodeint_end(&head, 17);
     add_nodeint_end(&head, 1);
-    print_listint(head);
+    /*print_listint(head);*/
 
-    head = NULL;
-
-    if (is_palindrome(NULL) == 1)
-        printf("Linked list is a palindrome\n");
+    if (is_palindrome(&head) == 1)
+        printf("PALINDROME\n");
     else
-        printf("Linked list is not a palindrome\n");
+        printf("\tNOT\n");
 
     free_listint(head);
 
