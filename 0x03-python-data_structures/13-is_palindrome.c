@@ -7,25 +7,19 @@
  **/
 int is_palindrome(listint_t **head)
 {
-	int *array;
+	int array[4096];
 	int i = 0, j = 0, len = 0, result = 1;
 	listint_t *tmp;
 
 	if (head == NULL || *head == NULL)
 		return (1);
 
-	for (tmp = *head; tmp != NULL; i++)
-		tmp = tmp->next;
-
-	array = malloc(sizeof(int) * i);
-
-	for (i = 0, tmp = *head; tmp != NULL; tmp = tmp->next)
+	for (tmp = *head; tmp != NULL; tmp = tmp->next)
 		array[i++] = tmp->n;
 
 	for (len = i - 1; result && j <= len / 2; j++)
 		if (array[j] != array[len - j])
 			result = 0;
 
-	free(array);
 	return (result);
 }
