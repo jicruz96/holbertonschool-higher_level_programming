@@ -7,4 +7,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
             vals[j] = vals[j] + i[j]
     new_tuple = (vals[0], vals[1])
 
-    return new_tupleS
+    return new_tuple
