@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * is_palindrome - checks if a list is a palindrome
  * @head: pointer to list
@@ -7,24 +7,16 @@
  **/
 int is_palindrome(listint_t **head)
 {
-	listint_t *tail = NULL, *tmp = *head, *prev;
-	int result = 1;
+	int array[1024];
+	int i = 0, j = 0, len = 0;
+	listint_t *tmp = *head;
 
-	while (result && tmp && tmp != tail)
-	{
-		for (prev = tmp; prev->next != tail;)
-			prev = prev->next;
+	for (; tmp != NULL; tmp = tmp->next)
+		tmp->n = array[i++];
 
-		tail = prev;
+	for (len = i - 1; j <= len / 2; j++)
+		if (array[j] != array[len - j])
+			return (0);
 
-		if (tmp->n != tail->n)
-			result = 0;
-
-		if (tmp == tail || tmp->next == tail)
-			tmp = NULL;
-		else
-			tmp = tmp->next;
-	}
-	free_listint(tmp);
-	return (result);
+	return (1);
 }
