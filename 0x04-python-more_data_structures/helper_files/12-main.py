@@ -8,7 +8,7 @@ def test_roman(roman_number):
     return "{} = {}".format(roman_number, roman_to_int(roman_number))
 
 
-testlist = ["MMMCMLXLIX", "XLIX", 'C', "CXL", "VIII", "XIX", None]
+testlist = ["MMMCMLXLIX", "XLIX", 'C', "CXL", "VIII", "", None]
 
 response = list(map(test_roman, testlist))
 for i in response:
