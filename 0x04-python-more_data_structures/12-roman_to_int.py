@@ -12,7 +12,7 @@ def roman_to_int(roman_string):
 
 
 """
-ALTERNATE VERSION: LOOPED   -   slightly more readable
+ALTERNATE VERSION: LOOPED
 def roman_to_int(roman_string):
     d = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     prev = 0
