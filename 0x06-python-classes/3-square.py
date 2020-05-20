@@ -1,6 +1,12 @@
 #!/usr/bin/python3
+"""
+Defines a square class with a specific size and area
+"""
+
+
 class Square:
-    """ Square class. Defines a square with a specific size.
+    """ 
+    Square class. Defines a square with a specific size.
 
     Args:
         size (int): sets __size
@@ -18,7 +24,8 @@ class Square:
         self.__size = size
 
     def area(self):
-        """Returns area of square
+        """
+        Returns area of square
 
         Returns:
             area of square
