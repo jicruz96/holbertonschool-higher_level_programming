@@ -5,7 +5,7 @@ Defines a square class with a specific size and area
 
 
 class Square:
-    """ 
+    """
     Square class. Defines a square with a specific size.
 
     Args:
