@@ -55,7 +55,7 @@ class Square:
     @property
     def position(self):
         """ I return a position tuple that determines printing behavior """
-        return size.__position
+        return self.__position
 
     @position.setter
     def position(self, value):
