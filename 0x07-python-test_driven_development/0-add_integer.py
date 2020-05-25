@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""This module defines add_integer, a function that returns the sum of two integers"""
+"""
+This module defines add_integer, a function that returns the sum of 2 integers
+If the arguments are floats, they are converted to integers before addition.
+The function returns a Type Error if any arguments are not ints or floats.
+"""
 
 
 def add_integer(a, b=98):
