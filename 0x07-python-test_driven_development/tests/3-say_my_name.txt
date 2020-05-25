@@ -1,1 +1,14 @@
->>> test = __import__('0-add-integer').add_integer
+>>> test = __import__('3-say_my_name').say_my_name
+
+# Case 1: Standard function behavior #
+
+>>> test("J.I.", "Cruz")
+My name is J.I. Cruz
+
+
+# Case 2: Argument Error
+
+>>> test(1, "Cruz")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
