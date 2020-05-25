@@ -1,1 +1,23 @@
->>> test = __import__('0-add-integer').add_integer
+>>> test = __import__('4-print_square').print_square
+
+# Case 1 - Standard Behavior
+>>> test(3)
+###
+###
+###
+
+# Case 2 - size is 0
+>>> test(0)
+
+
+# Case 3 - size is negative
+>>> test(-1)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+# Case 4 - Wrong argument type
+>>> test('1')
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
