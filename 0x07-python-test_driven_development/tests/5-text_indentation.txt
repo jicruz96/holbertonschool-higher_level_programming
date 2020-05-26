@@ -1,1 +1,10 @@
->>> test = __import__('0-add-integer').
+>>> test = __import__('5-text_indentation').text_indentation
+
+# Case 1 - Standard Behavior
+>>> test("Try.     This?Cool.")
+Try.
+<BLANKLINE>
+This?
+<BLANKLINE>
+Cool.
+<BLANKLINE>
