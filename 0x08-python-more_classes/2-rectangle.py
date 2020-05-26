@@ -18,7 +18,8 @@ class Rectangle:
     def width(self):
         """ int: defines width of rectangle.
 
-        width must be an int and above 0
+        Note:
+            width must be an int and above 0
         """
         return self.__width
 
@@ -36,7 +37,8 @@ class Rectangle:
     def height(self):
         """ int: defines height of rectangle.
 
-        height must be an int and above 0
+        Note:
+            height must be an int and above 0
         """
         return self.__height
 
