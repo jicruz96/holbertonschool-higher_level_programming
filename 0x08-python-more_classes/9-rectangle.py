@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-#!/usr/bin/python3
 """ This module defines the Rectangle class """
 
 
@@ -104,6 +102,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """ Returns the rectangle with the larger area """
         if isinstance(rect_1, Rectangle) is False:
             raise TypeError('rect_1 must be an instance of Rectangle')
         if isinstance(rect_2, Rectangle) is False:
@@ -115,4 +114,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """ Returns a rectangle class of height and width size """
         return cls(size, size)
