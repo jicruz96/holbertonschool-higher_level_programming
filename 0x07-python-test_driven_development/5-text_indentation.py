@@ -8,22 +8,17 @@ def text_indentation(text):
     if type(text) != str:
         raise TypeError('text must be a string')
 
-    delims = [".", "?", ":"]
-    output = []
     ignore_spaces = False
-    a_space = " "
 
-    for char in list(text):
+    for this in list(text):
 
-        if char in delims:
-            print(char + "\n")
+        if this in ".?:":
+            print(this + "\n")
             ignore_spaces = True
             continue
 
-        if ignore_spaces is True:
-            if char is a_space:
-                continue
-            else:
-                ignore_spaces = False
+        if ignore_spaces is True and this is " ":
+            continue
 
-        print(char, end='')
+        print(this, end='')
+        ignore_spaces = False
