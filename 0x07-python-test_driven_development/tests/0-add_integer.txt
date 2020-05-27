@@ -11,16 +11,23 @@
 99
 
 
-# Case 4: Float NaN
+# Case 3: Float NaN
 
 >>> test((1.5+5j))
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
-# Case 5: Wrong argument type
+# Case 4: Wrong argument type
 
 >>> test("1")
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
+# Case 5: Float Overflow
+
+>>> test(float(1.79e+308), float(1.79e+308))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
