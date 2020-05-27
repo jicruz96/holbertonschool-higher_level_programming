@@ -3,16 +3,5 @@
 
 
 def copy_list(l):
+    """ Returns a copy of l """
     return l.copy()
-
-
-my_list = [1, 2, 3]
-print(my_list)
-
-new_list = copy_list(my_list)
-
-print(my_list)
-print(new_list)
-
-print(new_list == my_list)
-print(new_list is my_list)
