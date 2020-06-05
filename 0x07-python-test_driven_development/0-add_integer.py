@@ -10,9 +10,6 @@ def add_integer(a, b=98):
     - Floats are converted to integers before addition.
     - Returns a Type Error if an argument is not an int or float.
     """
-    if type(a) in (float, int):
-        if type(b) in (float, int):
-            return int(a + b)
-        raise TypeError('b must be an integer')
-
+    if type(a) in (float, int) and type(b) in (float, int):
+        return int(a + b)
     raise TypeError('a must be an integer')
