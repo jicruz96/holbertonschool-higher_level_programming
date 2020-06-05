@@ -13,7 +13,7 @@ def pascal_triangle(n):
 
     pascal = [[1]]
 
-    for i in range(n):
+    for i in range(n - 1):
         prev = pascal[i]
         next = [prev[x] + prev[x - 1] for x in range(1, i + 1)]
         next.insert(0, 1)
