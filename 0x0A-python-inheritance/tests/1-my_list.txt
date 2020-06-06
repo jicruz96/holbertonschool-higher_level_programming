@@ -1,0 +1,35 @@
+>>> docClass = __import__('1-test').MyList.__doc__
+>>> len(docClass) > 0
+True
+
+>>> docMethod = __import__('1-test').MyList.print_sorted.__doc__
+>>> len(docMethod) > 0
+True
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> test = MyList()
+>>> test.append(1)
+>>> test.append(9)
+>>> test.append(5)
+>>> test.append(8)
+>>> test.append(2)
+>>> test.append(7)
+>>> test.print_sorted()
+[1, 2, 5, 7, 8, 9]
+
+>>> test.append(-7)
+>>> test.print_sorted()
+[-7, 1, 4, 4, 7]
+
+>>> test.print_sorted(1)
+Traceback (most recent call last):
+    ...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+
+>>> test = MyList()
+>>> print(test)
+[]
+>>> test.print_sorted()
+[]

@@ -1,0 +1,40 @@
+>>> file_doc = __import__('7-base_geometry').__doc__
+>>> len(file_doc) > 0
+True
+
+>>> docClass = __import__('7-base_geometry').BaseGeometry.__doc__
+>>> len(docClass) > 0
+True
+
+>>> docMethod = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+>>> len(docMethod) > 0
+True
+>>> test = __import__('7-base_geometry').BaseGeometry
+>>> b = test()
+
+>>> b.integer_validator("hello", 5)
+>>> b.integer_validator("dad", -1101010101)
+>>> b.integer_validator("name", "Jesus H. Christ")
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
+
+
+>> b.integer_validator(666, )
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> b.integer_validator("float me", 25.2)
+Traceback (most recent call last):
+    ...
+TypeError: my_int must be an integer
+
+>>> b.integer_validator("my_int", float(NaN))
+Traceback (most recent call last):
+    ...
+NameError: name 'NaN' is not defined
+
+>>> b.integer_validator("IS THIS WHAT YOU WANT")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
