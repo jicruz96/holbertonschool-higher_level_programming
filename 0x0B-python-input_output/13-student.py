@@ -38,6 +38,5 @@ class Student:
         """
         replaces all instance attributes with attributes from json object
         """
-        self.age = json['age']
-        self.first_name = json['first_name']
-        self.last_name = json['last_name']
+        for key in json.keys():
+            setattr(self, key, json[key])
