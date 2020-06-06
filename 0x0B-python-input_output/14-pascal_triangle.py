@@ -13,11 +13,10 @@ def pascal_triangle(n):
 
     pascal = [[1]]
 
-    for i in range(n - 1):
-        prev = pascal[i]
-        next = [prev[x] + prev[x - 1] for x in range(1, i + 1)]
-        next.insert(0, 1)
-        next.append(1)
+    for i in range(1, n):
+        prev = pascal[i - 1]
+        next = [prev[x] + prev[x - 1] for x in range(1, i)]
+        next = [1] + next + [1]
         pascal.append(next)
 
     return pascal
