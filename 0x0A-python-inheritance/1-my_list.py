@@ -9,4 +9,4 @@ class MyList(list):
         """ prints the list, but sorted (ascending sort) """
         tmp = self.copy()
         tmp.sort()
-        return print('{}'.format(str(tmp)))
+        print(tmp)
