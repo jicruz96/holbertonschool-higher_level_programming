@@ -1,8 +1,8 @@
->>> docClass = __import__('1-test').MyList.__doc__
+>>> docClass = __import__('1-my_list').MyList.__doc__
 >>> len(docClass) > 0
 True
 
->>> docMethod = __import__('1-test').MyList.print_sorted.__doc__
+>>> docMethod = __import__('1-my_list').MyList.print_sorted.__doc__
 >>> len(docMethod) > 0
 True
 
