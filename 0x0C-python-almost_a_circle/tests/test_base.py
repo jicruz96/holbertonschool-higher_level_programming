@@ -37,3 +37,7 @@ class TestCases(unittest.TestCase):
         a = Rectangle(3, 4)
         self.assertAlmostEqual(a.width, 3)
         self.assertAlmostEqual(a.height, 4)
+
+    def test_area(self):
+        """ checks area method of Rectangle Class """
+        self.assertAlmostEqual(Rectangle(3, 4).area(), 12)
