@@ -2,6 +2,7 @@
 """ Defines Rectangle class """
 
 from models.base import Base
+import json
 
 
 class Rectangle(Base):
@@ -74,7 +75,12 @@ class Rectangle(Base):
 
     def display(self):
         """ prints representation of instance with '#' """
-        row = '#' * self.width + "\n"
+        if self.width == 0 or self.height == 0:
+            print()
+            return
+        row = ' ' * self.x + '#' * self.width
+        for i in range(self.y):
+            print()
         for i in range(self.height):
             print(row)
 
@@ -82,3 +88,24 @@ class Rectangle(Base):
         """ returns string representation of instance """
         s = '[Rectangle] ({}) {}/{} - {}/{}'
         return s.format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """ updates class attributes. """
+
+        if len(args) > 0:
+            attrs = ('id', 'width', 'height', 'x', 'y')
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+
+        elif len(kwargs) > 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+        attrs = ('id', 'width', 'height', 'x', 'y')
+        for i in range(len(args)):
+            setattr(self, attrs[i], args[i])
+
+    def to_dictionary(self):
+        """ returns dictionary representation of instance """
+        keys = ['x', 'y', 'id', 'width', 'height']
+        return {key: getattr(self, key) for key in keys}
