@@ -16,19 +16,19 @@ class Base:
         else:
             self.id = id
 
-    @classmethod
+    @staticmethod
     def validate_int(attr, value):
         """ validates integer inputs """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(attr))
 
-    @classmethod
+    @staticmethod
     def validate_positive(attr, value):
         """ validates that input is positive """
         if value <= 0:
             raise ValueError('{} must be > 0'.format(attr))
 
-    @classmethod
+    @staticmethod
     def validate_non_negative(attr, value):
         """ validates that input is non_negative """
         if value < 0:
