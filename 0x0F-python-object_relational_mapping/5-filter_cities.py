@@ -37,9 +37,10 @@ if __name__ == "__main__":
 
         for i in range(num_cities):
             str = cities[i][0]
-            if i == num_cities - 1:
-                print(str)
+            if i != num_cities - 1:
+                str += ', '
             else:
-                print(str + ', ', end='')
+                print(str, end='')
     except:
         pass
+    print()
