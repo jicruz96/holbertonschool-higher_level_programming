@@ -14,7 +14,7 @@ if __name__ == "__main__":
             "port": 3306        # This is default MySQLdb value
         }
         state = argv[4]
-        QUERY = "SELECT * FROM states WHERE name = '{}'"
+        QUERY = "SELECT * FROM states WHERE BINARY(name) = '{}'"
         QUERY = QUERY.format(state)
 
         # Connect to database, execute QUERY
@@ -29,7 +29,6 @@ if __name__ == "__main__":
 
         # Print result
         for tuple in tuples:
-            if tuple[1] == state:
-                print(tuple)
+            print(tuple)
     except:
         pass
