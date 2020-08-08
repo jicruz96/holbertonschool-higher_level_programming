@@ -2,33 +2,32 @@
 """ lists all states from the database hbtn_0e_0_usa """
 
 from sys import argv
+import MySQLdb
 
-if __name__ == "__main__" and len(argv) is 4:
+if __name__ == "__main__":
 
-    import MySQLdb
-
-    args = {
-        "user": argv[1],
-        "passwd": argv[2],
-        "db": argv[3],
-        "host": "localhost",  # This is default MySQLdb value
-        "port": 3306        # This is default MySQLdb value
-    }
-    QUERY = "SELECT * FROM states ORDER BY states.id"
-
-    # Connect to database, execute QUERY
     try:
+        args = {
+            "user": argv[1],
+            "passwd": argv[2],
+            "db": argv[3],
+            "host": "localhost",  # This is default MySQLdb value
+            "port": 3306        # This is default MySQLdb value
+        }
+        QUERY = "SELECT * FROM states ORDER BY states.id"
+
+        # Connect to database, execute QUERY
         db_connection = MySQLdb.connect(**args)
         cursor = db_connection.cursor()
         cursor.execute(QUERY)
-
-        # Print result
         tuples = cursor.fetchall()
-        for tuple in tuples:
-            print(tuple)
 
         # Clean up
         cursor.close()
         db_connection.close()
+
+        # Print result
+        for tuple in tuples:
+            print(tuple)
     except:
         pass
