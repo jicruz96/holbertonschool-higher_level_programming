@@ -36,11 +36,10 @@ if __name__ == "__main__":
         num_cities = len(cities)
 
         for i in range(num_cities):
-            str = cities[i][0]
+            city_str = cities[i][0]
             if i != num_cities - 1:
-                str += ', '
-            else:
-                print(str, end='')
+                city_str += ', '
+            print(city_str, end='')
     except:
         pass
     print()
