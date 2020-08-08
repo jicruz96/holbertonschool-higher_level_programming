@@ -30,5 +30,5 @@ if __name__ == "__main__":
         # Print result
         for tuple in tuples:
             print(tuple)
-    except Exception:
-        raise Exception
+    except:
+        pass
