@@ -19,7 +19,7 @@ if __name__ == "__main__":
                     FROM cities
                     LEFT JOIN states
                     ON cities.state_id = states.id
-                    WHERE states.name = %(state)s
+                    WHERE BINARY(states.name) = %(state)s
                 """
 
         # Connect to database, execute QUERY
