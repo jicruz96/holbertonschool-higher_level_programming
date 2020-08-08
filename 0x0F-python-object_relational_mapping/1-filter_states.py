@@ -14,7 +14,7 @@ if __name__ == "__main__":
             "host": "localhost",  # This is default MySQLdb value
             "port": 3306        # This is default MySQLdb value
         }
-        QUERY = "SELECT * FROM states WHERE name REGEXP '^[N].*$'"
+        QUERY = "SELECT * FROM states WHERE BINARY(name) REGEXP '^N.*$';"
 
         # Connect to database, execute QUERY
         db_connection = MySQLdb.connect(**args)
