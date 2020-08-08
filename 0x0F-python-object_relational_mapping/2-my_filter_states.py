@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" lists state_entry from db """
+""" lists state from db """
 
 from sys import argv
 import MySQLdb
@@ -13,7 +13,9 @@ if __name__ == "__main__":
             "host": "localhost",  # This is default MySQLdb value
             "port": 3306        # This is default MySQLdb value
         }
-        QUERY = "SELECT * FROM states WHERE name = '{}'".format(argv[4])
+        state = argv[4]
+        QUERY = "SELECT * FROM states WHERE name = '{}' ORDER BY id"
+        QUERY = QUERY.format(state)
 
         # Connect to database, execute QUERY
         db_connection = MySQLdb.connect(**args)
