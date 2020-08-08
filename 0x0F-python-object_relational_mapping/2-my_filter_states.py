@@ -14,7 +14,7 @@ if __name__ == "__main__":
             "port": 3306        # This is default MySQLdb value
         }
         state = argv[4]
-        QUERY = "SELECT * FROM states WHERE name = '{}' ORDER BY id"
+        QUERY = "SELECT * FROM states WHERE name = '{}'"
         QUERY = QUERY.format(state)
 
         # Connect to database, execute QUERY
@@ -29,6 +29,7 @@ if __name__ == "__main__":
 
         # Print result
         for tuple in tuples:
-            print(tuple)
+            if tuple[1] == state:
+                print(tuple)
     except:
         pass
