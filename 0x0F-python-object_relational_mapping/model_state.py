@@ -8,7 +8,7 @@ Base = declarative_base()
 
 
 class State(Base):
-    """ 
+    """
     Representation of states table
 
     Args:
