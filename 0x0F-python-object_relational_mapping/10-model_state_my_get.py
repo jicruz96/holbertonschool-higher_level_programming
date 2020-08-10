@@ -20,8 +20,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     for state in session.query(State).filter(State.name == state_name):
-        if state is None:
-            print("Not found")
-        else:
-            print("{}".format(state.id))
+        print("{}".format(state.id))
+        break
+    else:
+        print("Not found")
     session.close()
