@@ -12,7 +12,7 @@ if __name__ == '__main__':
         pw = argv[2]
         db = argv[3]
         URL = "mysql+mysqldb://{}:{}@localhost/{}".format(user, pw, db)
-        engine = create_engine(URL, pool_pre_ping=True)
+        engine = create_engine(URL)
         Base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
         session = Session()
