@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" changes state.name to "New Mexico" for a State object with state.id = 2 from db """
+"""
+changes state.name for a State object with state.id = 2 from db
+"""
 
 from sys import argv
 from model_state import Base, State
