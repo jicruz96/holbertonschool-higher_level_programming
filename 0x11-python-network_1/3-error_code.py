@@ -7,8 +7,9 @@ from sys import argv
 
 url = argv[1]
 
-try:
-    with request.urlopen(url) as response:
-        print(response)
-except HTTPError as e:
-    print("Error code: {}".format(e.code))
+if __name__ == "__main__":
+    try:
+        with request.urlopen(url) as response:
+            print(response)
+    except HTTPError as e:
+        print("Error code: {}".format(e.code))
