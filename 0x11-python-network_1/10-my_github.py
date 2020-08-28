@@ -6,7 +6,11 @@ from sys import argv
 
 if __name__ == "__main__":
 
+    url = 'api.github.com/user'
     user = argv[1]
     pw = argv[2]
 
-    print(requests.get('api.github.com/user', auth=(user, pw)).json()['id'])
+    try:
+        print(requests.get(url, auth=(user, pw)).json()['id'])
+    except:
+        print('None')
