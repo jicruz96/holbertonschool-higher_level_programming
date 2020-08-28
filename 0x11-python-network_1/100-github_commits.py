@@ -13,4 +13,4 @@ if __name__ == "__main__":
     for commit in commits:
         sha = commit['sha']
         name = commit['commit']['author']['name']
-        print("{} {}".format(sha, name))
+        print("{}: {}".format(sha, name))
