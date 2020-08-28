@@ -9,5 +9,5 @@ if __name__ == "__main__":
     url = 'https://intranet.hbtn.io/status'
     content = requests.get(url).text
     print("Body response:")
-    print("\ttype: {}".format(type(content)))
-    print("\tcontent: {}".format(content))
+    print("\t- type: {}".format(type(content)))
+    print("\t- content: {}".format(content))
