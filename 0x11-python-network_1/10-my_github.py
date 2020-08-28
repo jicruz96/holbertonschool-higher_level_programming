@@ -11,6 +11,8 @@ if __name__ == "__main__":
     pw = argv[2]
 
     try:
-        print(requests.get(url, auth=(user, pw)).json()['id'])
+        out = requests.get(url, auth=(user, pw))
+        id = out.json()['id']
+        print(id)
     except:
         print('None')
