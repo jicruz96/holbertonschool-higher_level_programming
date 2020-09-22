@@ -12,8 +12,8 @@ All of the files in this folder are exercises associated with the curriculum.
 * Files 7 through 10 are differenttypes of small functions that deal with variable scopes and closures.
 
 The rest of this README:
-: [lists some of the resources I used to learn these subjects](#project-resources)
-: [summarizes my notes on the project's Learning Objectives](#learning-objectives)
+* [lists some of the resources I used to learn these subjects](#project-resources)
+* [summarizes my notes on the project's Learning Objectives](#learning-objectives)
 
 
 ## Project Resources
