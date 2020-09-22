@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // Creates an exportable Rectangle class
 
 module.exports = class Rectangle {
